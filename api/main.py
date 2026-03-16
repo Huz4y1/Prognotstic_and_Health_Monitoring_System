@@ -1,22 +1,3 @@
-# api/main.py
-"""
-Jet Engine PHM — FastAPI Backend
-
-Endpoints:
-  POST /predict    — score a single SensorReading
-  GET  /ws         — WebSocket: simulation frames in, scored frames out
-                     Also used as broadcast channel for hardware serial data
-
-Startup:
-  - Loads model/logistic_regression.pkl with joblib
-  - Background thread reads serial port (SERIAL_PORT env, default /dev/ttyUSB0)
-    at 115200 baud, parses JSON lines, runs ML inference, broadcasts to all WS clients
-
-Environment variables:
-  SERIAL_PORT   — serial device path (default: /dev/ttyUSB0)
-  MODEL_PATH    — path to .pkl file  (default: ../machineLearning/model/logistic_regression.pkl)
-"""
-
 from __future__ import annotations
 
 import asyncio
