@@ -1,16 +1,3 @@
-# machineLearning/train_model.py
-"""
-Train a Logistic Regression pipeline on synthetic jet engine data.
-
-Pipeline: StandardScaler → LogisticRegression
-Features: [temp, vibration, current, rpm]
-Target:   label (0=normal, 1=failure)
-
-Outputs:
-  model/logistic_regression.pkl  — trained joblib pipeline
-  Console: classification report, AUC-ROC, 5-fold CV AUC
-"""
-
 import os
 import sys
 import joblib
