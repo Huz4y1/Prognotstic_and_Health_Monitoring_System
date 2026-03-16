@@ -1,15 +1,3 @@
-# machineLearning/data/synthetic_data.py
-"""
-Generate synthetic jet engine sensor data with three failure modes.
-Produces 10,000 rows saved to data/data.csv.
-
-Failure modes (30% of rows):
-  1. thermal+vibration: high temp + high vibration
-  2. overspeed:         high RPM + elevated current
-  3. electrical:        high current
-Normal ops (70% of rows): baseline healthy operation
-"""
-
 import os
 import numpy as np
 import pandas as pd
