@@ -206,40 +206,6 @@ The ESP32 must emit newline-terminated JSON at **115200 baud, 10Hz**:
 
 All 7 fields must be present. The backend will reject malformed lines silently and wait for the next one.
 
-### Minimal Arduino sketch structure
-
-```cpp
-#include <ArduinoJson.h>
-#include <MPU6500_WE.h>
-#include <DallasTemperature.h>
-
-void loop() {
-  StaticJsonDocument<256> doc;
-
-  // DS18B20 temperature
-  sensors.requestTemperatures();
-  doc["temp"] = sensors.getTempCByIndex(0);
-
-  // MPU6500 vibration (resultant g-force) and attitude
-  xyzFloat gValue = mpu.getGValues();
-  doc["vibration"] = mpu.getResultantG(gValue);
-  doc["roll"]  = mpu.getRoll();
-  doc["pitch"] = mpu.getPitch();
-  doc["yaw"]   = mpu.getYaw();
-
-  // ACS712 current — Vref=2.5V, sensitivity=185mV/A
-  float voltage = analogRead(ACS_PIN) * (3.3 / 4095.0);
-  doc["current"] = (voltage - 2.5) / 0.185;
-
-  // KY-003 RPM — calculated from pulse interval
-  doc["rpm"] = calculateRPM();
-
-  serializeJson(doc, Serial);
-  Serial.println();
-  delay(100); // 10 Hz
-}
-```
-
 ### Connecting on Windows
 On Windows the serial port will be a COM port, not `/dev/ttyUSB0`. Check Device Manager for the correct port (e.g. COM3) then start the backend with:
 
