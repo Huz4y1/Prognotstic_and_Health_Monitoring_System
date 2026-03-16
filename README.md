@@ -1,4 +1,4 @@
-# Jet Engine Digital Twin — Prognostic Health Monitor (PHM)
+# Prognostic and Health Monitoring System (PHMS)
 
 A full-stack real-time dashboard for monitoring jet engine health using a physical ESP32 sensor rig or a built-in simulation mode. Sensor data is scored by a trained Machine Learning model every 100ms and visualized through a 3D engine model, live charts, and a risk prediction panel.
 
