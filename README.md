@@ -328,3 +328,11 @@ NEXT_PUBLIC_WS_URL=ws://localhost:8000/ws
 │   Emits JSON @ 10Hz over USB serial                         │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+
+
+
+## Media
+![PHMS2](https://github.com/user-attachments/assets/17a862fe-a40c-4269-9db0-cd61a51a5349)
+![phms_dashboard](https://github.com/user-attachments/assets/9dd97035-f427-4130-ace8-ed0d30224caf)
+
